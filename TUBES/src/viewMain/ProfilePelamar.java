@@ -3,25 +3,47 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package viewPelamar;
+package viewMain;
 
+import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
  *
  * @author toshiba
  */
-public class Profile extends javax.swing.JFrame {
+public class ProfilePelamar extends javax.swing.JFrame implements View{
 
     /**
-     * Creates new form Profile
+     * Creates new form ProfilePelamar
      */
-    public Profile() {
+    private CardLayout cardLayout;
+    
+    
+    public ProfilePelamar() {
         initComponents();
+        cardLayout=new CardLayout();
+        jPanel1.setLayout(cardLayout);
+        getContentPane().setBackground(Color.ORANGE);
     }
 
+    public CardLayout getCardLayout() {
+        return cardLayout;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+    
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+    
     public Object getjButton1() {
         return jButton1;
     }
@@ -37,11 +59,15 @@ public class Profile extends javax.swing.JFrame {
     public Object getjButton4() {
         return jButton4;
     }
+    @Override
     public void addListener(ActionListener e) {
         jButton1.addActionListener(e);
         jButton2.addActionListener(e);
         jButton3.addActionListener(e);
         jButton4.addActionListener(e);
+    }
+    public void viewErrorMsg(String errorMsg){
+        JOptionPane.showMessageDialog(this, errorMsg);
     }
     
     
@@ -108,7 +134,7 @@ public class Profile extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(338, 338, 338)
                         .addComponent(jLabel9)))
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

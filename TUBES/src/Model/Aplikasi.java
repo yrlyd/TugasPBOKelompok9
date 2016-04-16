@@ -276,4 +276,13 @@ public class Aplikasi {
         }
         return jabatan;
     }
+
+    public List<Pelamar> getDaftarPelamar() {
+        return daftarPelamar;
+    }
+
+    public List<Perusahaan> getDaftarPerusahaan() {
+        return daftarPerusahaan;
+    }
+    
 }

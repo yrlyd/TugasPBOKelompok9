@@ -179,7 +179,7 @@ public class Console {
         String namaPerusahaan, namaLowongan;
 //        Scanner in = new Scanner(System.in);
 //        Scanner st = new Scanner(System.in);
-        System.out.print("Masukkan No.KTP\t: ");
+        System.out.print("Masukkan username: ");
         id = st.nextLine();
         if (model.getPelamar(id) != null) {
             do {
@@ -317,7 +317,7 @@ public class Console {
                 }
             } while (ulang == 0);
         } else {
-            System.out.println("\nNo.KTP tidak di temukan\n");
+            System.out.println("\n username tidak di temukan\n");
             mainMenu();
         }
     }
@@ -344,7 +344,7 @@ public class Console {
                     Pelamar pelamar;
                     System.out.println("Buat Akun Pelamar");
                     System.out.println("=================");
-                    System.out.print("No.KTP\t\t: ");
+                    System.out.print("username\t\t: ");
                     id = st.nextLine();
                     System.out.print("Nama\t\t: ");
                     nama = st.nextLine();
@@ -410,13 +410,13 @@ public class Console {
             pil = in.nextInt();
             switch (pil) {
                 case 1:
-                    System.out.print("Masukkan No.KTP\t: ");
+                    System.out.print("Masukkan username\t: ");
                     id = st.nextLine();
                     if (model.getPelamar(id) != null) {
                         model.deletePelamar(id);
                         System.out.println("Akun Pelamar Berhasil dihapus");
                     } else {
-                        System.out.println("No.KTP tidak di temukan");
+                        System.out.println("username tidak di temukan");
                     }
                     model.savePelamar();
                     ulang = 1;

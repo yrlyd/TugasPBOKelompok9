@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package viewPelamar;
+package viewMain;
 
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.util.List;
 import javax.swing.JList;
 
@@ -24,6 +26,10 @@ public class CariLowongan extends javax.swing.JPanel {
     public void setjList1(List<String> jList1) {
         this.jList1 = (JList<String>) jList1;
     }
+    public void addAdapter(MouseAdapter e) {
+        jList1.addMouseListener(e);
+    }
+
     
 
     /**

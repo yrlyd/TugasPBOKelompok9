@@ -5,6 +5,7 @@
  */
 package Driver;
 
+import Controller.ControllerMain;
 import Model.Aplikasi;
 import ViewConsole.Console;
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class Driver {
 
     public static void main(String[] args) throws IOException {
         Aplikasi app = new Aplikasi();
-        Console console = new Console(app);
+        ControllerMain c=new ControllerMain(app);
 //        app.mainMenu();
     }
 }
