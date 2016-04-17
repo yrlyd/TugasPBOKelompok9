@@ -27,23 +27,12 @@ public class Aplikasi {
     private List<Perusahaan> daftarPerusahaan;
     private List<Pelamar> daftarPelamar;
     private ManageFile file;
-//    private Console console;
-//    private int jumlahPerusahaan;
-//    private int jumlahPelamar;
-
-//    public Aplikasi(int maxPerusahaan, int maxPelamar) {
-//        daftarPerusahaan = new ArrayList<>();
-//        jumlahPerusahaan = 0;
-//        daftarPelamar = new ArrayList<>();
-//        jumlahPelamar = 0;
-//    }
     public Aplikasi() throws IOException {
         daftarPerusahaan = new ArrayList<>();
         daftarPelamar = new ArrayList<>();
         file = new ManageFile();
         loadPerusahaan();
         loadPelamar();
-//        mainMenu();
     }
 
     public void loadPelamar() throws FileNotFoundException, IOException {
@@ -108,15 +97,6 @@ public class Aplikasi {
     }
 
     public Lowongan cariLowongan(String nama, Perusahaan perusahaan) {
-//        Lowongan lowongan = null;
-//        for(int i = 0;i<daftarPerusahaan.size();i++){
-//            for(int j;)
-//        }
-//        for (int i = 0; i < perusahaan.getJumlahLowongan(); i++) {
-//            if (perusahaan.getLowongan(i).getNamaLowongan() == nama) {
-//                lowongan = perusahaan.getLowongan(i);
-//            }
-//        }
         for (Lowongan l : perusahaan.getDaftarLowongan()) {
             if (l.getNamaLowongan().equals(nama)) {
                 return l;
@@ -126,7 +106,6 @@ public class Aplikasi {
     }
 
     public void daftarLowongan(Pelamar p, Lowongan lowongan) {
-//        lowongan.addBerkas(p.getBerkas());
         boolean ada = false;
         for (int i = 0; i < daftarPerusahaan.size(); i++) {
             for (int j = 0; j < daftarPerusahaan.get(i).getDaftarLowongan().size(); j++) {
@@ -148,12 +127,10 @@ public class Aplikasi {
 
     public void addPerusahaan(Perusahaan perusahaan) {
         daftarPerusahaan.add(perusahaan);
-//        jumlahPerusahaan++;
     }
 
     public void addPelamar(Pelamar pelamar) {
         daftarPelamar.add(pelamar);
-//        jumlahPelamar++;
     }
 
     public Pelamar getPelamar(String id) {
@@ -185,7 +162,6 @@ public class Aplikasi {
     public Pelamar cariPelamar(String nama) {
         for (Pelamar p : daftarPelamar) {
             if (p.getName().equals(nama)) {
-//                return p;
             }
         }
         return null;
@@ -205,7 +181,6 @@ public class Aplikasi {
                 daftarPelamar.remove(i);
             }
         }
-//        jumlahPelamar--;
     }
 
     public Perusahaan getPerusahaan(String id) {
@@ -224,7 +199,6 @@ public class Aplikasi {
                 daftarPerusahaan.remove(i);
             }
         }
-//        jumlahPerusahaan--;
     }
 
     public boolean cekPemberitahuan(long idBerkas) {
