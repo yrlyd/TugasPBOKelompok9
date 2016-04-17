@@ -29,8 +29,6 @@ public class Pelamar extends Orang{
                     System.out.println("\nID Berkas sudah ada\n");
                 } 
                 else {
-//                    berkas = new BerkasLamaran(idBerkas, this);
-//                    arrBerkas.add(berkas);
                     System.out.println("Anda telah mempunyai berkas");
                 }
             }            
