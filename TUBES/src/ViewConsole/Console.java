@@ -36,12 +36,9 @@ public class Console {
         int pil, ulang = 0;
         String id;
         String namaLowongan;
-//        Scanner in = new Scanner(System.in);
-//        Scanner st = new Scanner(System.in);
 
         System.out.print("Masukkan ID Perusahaan\t: ");
         id = st.nextLine();
-//        try {
         if (model.getPerusahaan(id) != null) {
             do {
                 System.out.println("\n***Perusahaan " + model.getPerusahaan(id).getName() + "***\n");
@@ -84,11 +81,6 @@ public class Console {
                             System.out.println("Lihat Pelamar");
                             System.out.println("=============");
                             model.getPerusahaan(id).lihatPelamar();
-//                            if (getPerusahaan(id).lihatPelamar() != null) {
-//                                System.out.println(getPerusahaan(id).lihatPelamar());
-//                            } else {
-//                                System.out.println("Tidak ada Pelamar");
-//                            }
                         } catch (Exception e) {
                             System.out.println(e.getMessage());
                             System.out.println("Maaf, Karena Terjadi Kesalahan");
@@ -135,9 +127,6 @@ public class Console {
                     case 5:
                         System.out.println("Hapus Lowongan");
                         System.out.println("==============");
-//                        System.out.println("Catatan : Dalam menghapus lowongan ini"
-//                        +"\n\tmaka pelamar yang telah di Approve juga akan terhapus"
-//                                + "\n\tKarena Anda dianggap telah memili");
                         System.out.print("Masukkan ID Lowongan yang akan dihapus : ");
                         long hapusLowongan = in.nextLong();
                         if (model.getPerusahaan(id).getlowonganById(hapusLowongan) != null) {
@@ -163,13 +152,9 @@ public class Console {
                 }
             } while (ulang == 0);
         } else {
-            //pas udah di delete akunnya kok malah error ya?, padahal akun yg null ituh udh masuk ke else harusnya
             System.out.println("\nID Perusahaan tidak ditemukan\n");
             mainMenu();
         }
-//        } catch (Exception e) {
-//            System.out.println(e.getMessage());
-//        }
     }
 
     public void menuPelamar() throws IOException {
@@ -177,8 +162,6 @@ public class Console {
         String id; 
         long idLowongan, idBerkas;
         String namaPerusahaan, namaLowongan;
-//        Scanner in = new Scanner(System.in);
-//        Scanner st = new Scanner(System.in);
         System.out.print("Masukkan username: ");
         id = st.nextLine();
         if (model.getPelamar(id) != null) {
@@ -245,18 +228,12 @@ public class Console {
                         break;
 
                     case 4:
-//                        try {
                         String namaCari;
                         System.out.println("Daftar Lowongan");
                         System.out.println("===============");
                         if (model.getPelamar(id).getBerkas() != null) {
                             System.out.print("Masukkan Nama Perusahaan yang Ingin dilamar : ");
                             namaCari = st.nextLine();
-//                            for (int i = 0; i < daftarPerusahaan.size(); i++) {
-//                                if (daftarPerusahaan.get(i).getName() == namaCari) {
-//                                    perusahaan = daftarPerusahaan.get(i);
-//                                }
-//                            }
                             Perusahaan p = model.cariPerusahaan(namaCari);
                             if (p == null) {
                                 System.out.println("\nNama Perusahaan Tidak Ditemukan\n");
@@ -268,7 +245,6 @@ public class Console {
                                     System.out.println("Lowongan yang Anda maksud ditemukan");
                                     System.out.println("Perusahaan " + p.getName() + " membuka lowongan " + lowongan.getNamaLowongan());
                                     model.daftarLowongan(model.getPelamar(id), lowongan);
-//                                System.out.println("\nAnda berhasil didaftarkan");
                                 } else {
                                     System.out.println("Lowongan yang Anda maksud tidak ditemukan");
                                 }
@@ -276,15 +252,7 @@ public class Console {
                         } else {
                             System.out.println("Anda perlu membuat berkas terlebih dahulu");
                         }
-//                        } catch (Exception e) {
-//                            System.out.println(e.getMessage());
-//                            System.out.println("Maaf, Karena Terjadi Kesalahan");
-//                            System.out.println("Akun Logout Secara Otomatis");
-//                            mainMenu();
-//                        }
                         break;
-//                    case 8 : 
-//                        System.out.println(getPelamar(id).getBerkas());
                     case 5:
                         System.out.println("Cek Pemberitahuan");
                         System.out.println("=================");
@@ -327,10 +295,7 @@ public class Console {
         String id;
         long noTlp;
         String nama, email;
-//        Scanner in = new Scanner(System.in);
-//        Scanner st = new Scanner(System.in);
         do {
-            //Runtime.getRuntime().exec("cls");
             System.out.println("Buat Akun");
             System.out.println("=========");
             System.out.println("1. Buat Akun Pelamar");
@@ -370,8 +335,6 @@ public class Console {
                     email = st.nextLine();
                     System.out.print("Kontak Perusahaan\t: ");
                     noTlp = in.nextLong();
-//                    System.out.print("Maximum Lowongan\t: ");
-//                    maxLowongan = in.nextInt();
                     perusahaan = new Perusahaan(id, nama, email, noTlp);
                     model.addPerusahaan(perusahaan);
                     model.savePerusahaan();
@@ -394,11 +357,9 @@ public class Console {
         } while (ulang == 0);
     }
 
-    //Di menuHapusAkun kasih try catch
     public void menuHapusAkun() throws IOException {
         int pil, ulang = 0;
         String id;
-//        Scanner in = new Scanner(System.in);
         do {
             System.out.println("Hapus Akun");
             System.out.println("==========");
@@ -453,7 +414,6 @@ public class Console {
 
     public void mainMenu() throws IOException {
         int pil, ulang = 0;
-//        Scanner in = new Scanner(System.in);
         do {
             System.out.println("Sitem Informasi Lowongan Pekerjaan\n");
 
@@ -483,11 +443,6 @@ public class Console {
                     menuHapusAkun();
                     ulang = 1;
                     break;
-//                case 5:
-//                    for (Perusahaan p : daftarPerusahaan) {
-//                        System.out.println(p.getName() + p.getId());
-//                    }
-//                    break;
                 case 0:
                     model.savePelamar();
                     model.savePerusahaan();
