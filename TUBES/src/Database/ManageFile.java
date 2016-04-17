@@ -17,8 +17,6 @@ import java.io.ObjectOutputStream;
  * @author FebbyFebriansyah
  */
 public class ManageFile {
-//    private String filePelamar = "filePelamar.dat";
-//    private String filePerusahaan = "filePerusahaan.dat";
     
     public void saveObject(Object o, String namaFile) throws FileNotFoundException, IOException{
         FileOutputStream fos = new FileOutputStream(namaFile);
