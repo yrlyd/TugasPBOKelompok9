@@ -21,17 +21,10 @@ public class Lowongan implements Serializable {
     private ArrayList<BerkasLamaran> berkasDiterima;
     private Date deadline;
     private String namaLowongan;
-//    private int jumlahBerkasMasuk = 0;
-//    private int jumlahBerkasDiterima = 0;
-//    private int maxBerkasMasuk;
-//    private int maxBerkasDiterima;
 
     public Lowongan(long idLowongan, int maxBerkasMasuk, int maxBerkasDiterima) {
         this.idLowongan = idLowongan;
-//        this.maxBerkasMasuk = maxBerkasMasuk;
-//        this.maxBerkasDiterima = maxBerkasDiterima;
         berkasMasuk = new ArrayList();
-//        berkasMasuk[0] = new BerkasLamaran(00000);
         berkasDiterima = new ArrayList();
 
     }
@@ -66,12 +59,10 @@ public class Lowongan implements Serializable {
 
     public void addBerkas(BerkasLamaran b) {
         berkasMasuk.add(b);
-//        jumlahBerkasMasuk++;
     }
 
     public void terimaBerkas(BerkasLamaran b) {
         berkasDiterima.add(b);
-//        jumlahBerkasDiterima++;
     }
 
     public BerkasLamaran getBerkasMasuk(int i) {
@@ -90,17 +81,11 @@ public class Lowongan implements Serializable {
         return b;
     }
 
-    //Remove Berkas Masuk tuh di hapus semua atau cukup satu aja?
     public void RemoveBerkasMasuk() {
         berkasMasuk.clear();
-//        for (int i = 0; i < berkasMasuk.size(); i++) {
-//            berkasMasuk.remove(i);
-//        }
     }
 
-    //Nanti yang pindah Berkas ini pake try catch
     public void pindahBerkas(int i) {
-        //berkasDiterima[jumlahBerkasDiterima] = berkasMasuk[i];
         terimaBerkas(berkasMasuk.get(i));
         berkasMasuk.remove(i);
     }
