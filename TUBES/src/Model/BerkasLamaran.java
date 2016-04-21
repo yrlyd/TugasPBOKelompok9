@@ -19,7 +19,6 @@ public class BerkasLamaran implements Serializable{
     public BerkasLamaran(long idBerkas, Pelamar pelamar) {
         this.idBerkas = idBerkas;
         profilPelamar = pelamar;
-//        this.namaPelamar = namaPelamar;
         
     }
 

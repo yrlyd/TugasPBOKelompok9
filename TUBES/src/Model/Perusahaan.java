@@ -16,12 +16,9 @@ import java.util.ArrayList;
 public class Perusahaan extends Orang {
 
     private ArrayList<Lowongan> daftarLowongan;
-//    private int jumlahLowongan = 0;
-//    private int maxLowongan;
 
     public Perusahaan(String id, String name, String email, long noTlp) {
         super(id, name, email, noTlp);
-//        this.maxLowongan = maxLowongan;
         daftarLowongan = new ArrayList();
     }
 
@@ -44,20 +41,10 @@ public class Perusahaan extends Orang {
     public long getNoTlp() {
         return super.getNoTlp(); //To change body of generated methods, choose Tools | Templates.
     }
-    /*public Perusahaan(int maxLowongan) {
-        
-     }*/
-    /*
-     di CreateLowongan nanti tambahin :
-     Pekerjaan
-     dsb
-     Kasih try catct buat ArrayIndexOutOfBound
-     */
 
     public void createLowongan(long idLowongan, String namaLowongan, Date deadline) {
         Lowongan lowongan = new Lowongan(idLowongan, namaLowongan, deadline);
         daftarLowongan.add(lowongan);
-//        jumlahLowongan++;
     }
 
     public Lowongan getLowongan(int i) {
@@ -74,24 +61,15 @@ public class Perusahaan extends Orang {
         return l;
     }
 
-    //removeLowongan tuh hapus semua??
     public void removeLowongan(long idLowongan) {
         for (int i = 0; i < daftarLowongan.size(); i++) {
             if (daftarLowongan.get(i).getIdLowongan() == idLowongan) {
                 daftarLowongan.remove(i);
             }
         }
-//        jumlahLowongan=0;
     }
 
     public void lihatPelamar() {
-        //System.out.println("daftar id pelamar (lewat berkas)");
-//        String namaP = "";
-//        String emailP = "";
-//        long idBerkasP = 0;
-//        long noTelpP = 0;
-//        String namaLowongan = "";
-//        long idLowongan;
         System.out.println();
         System.out.println("====Daftar Pelamar yang di Approve====");
         for (int a = 0; a < daftarLowongan.size(); a++) {
@@ -109,12 +87,6 @@ public class Perusahaan extends Orang {
         System.out.println("====Daftar Pelamar yang belum di Approve====");
         for (int i = 0; i < daftarLowongan.size(); i++) {
             for (int j = 0; j < daftarLowongan.get(i).getJumlahBerkasMasuk(); j++) {
-//                idBerkasP = daftarLowongan.get(i).getBerkasMasuk(j).getIdBerkas();
-//                namaP = daftarLowongan.get(i).getBerkasMasuk(j).getNamaPelamar();
-//                emailP = daftarLowongan.get(i).getBerkasMasuk(j).getEmailPelamar();
-//                noTelpP = daftarLowongan.get(i).getBerkasMasuk(j).getNoTelpPelamar();
-//                id = daftarLowongan.get(i).getIdLowongan();
-//                namaLowongan = daftarLowongan.get(i).getNamaLowongan();
                 if (daftarLowongan.get(i).getBerkasMasuk(j) != null) {
                     System.out.println("ID Berkas\t: " + daftarLowongan.get(i).getBerkasMasuk(j).getIdBerkas());
                     System.out.println("Nama Pelamar\t: " + daftarLowongan.get(i).getBerkasMasuk(j).getNamaPelamar());
@@ -125,18 +97,9 @@ public class Perusahaan extends Orang {
                 }
             }
         }
-//        return (//"ID Berkas\t: "+idBerkasP
-//                "\nNama Pelamar : "+namaP
-//                //+"\nEmail\t: "+emailP
-//                //+"\nKontak\t: "+noTelpP
-//                +"\nMelamar sebagai "+namaLowongan//+"(ID Lowongan : "+id+"\n"
-//                +"----------------------------------------------------------").toString();
     }
 
-    //Approve Pelamar tuh ngepindahin berkas jadi di terima aja
-    //atau yang dari berkas di terima di setujui/di jadiin pelamarnya tuh bener keterima??
     public boolean approvePelamar(long idLowongan, long idBerkas) {
-        //i adalah indeks daftarLowongan dan x adalah indeks Berkas Masuk
         boolean accept = false;
         for (int i = 0; i < daftarLowongan.size(); i++) {
             if (daftarLowongan.get(i).getIdLowongan() == idLowongan) {
